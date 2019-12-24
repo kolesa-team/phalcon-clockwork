@@ -5,7 +5,7 @@ Phalcon clockwork
 Install the Clockwork library via Composer.
 
 ```shell
-$ composer require kolesa/phalcon-clockwork
+$ composer require kolesa-team/phalcon-clockwork
 ```
 
 Set events manager to service(di)
