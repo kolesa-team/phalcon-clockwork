@@ -1,0 +1,26 @@
+{
+  "name": "kolesa-team/phalcon-clockwork",
+  "description": "The clockwork extension for working with the phalcon framework",
+  "version": "0.0.1",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Dmitriy Kuzyrov",
+      "email": "kuzyrov@kolesa.kz"
+    }
+  ],
+  "autoload":{
+    "psr-4":{
+      "Kolesa\\Clockwork\\": ["src/", "tests/"]
+    }
+  },
+  "require": {
+    "php": ">=7.0",
+    "ext-redis": "^3.1|^4.0",
+    "ext-phalcon": "^3.0",
+    "itsgoingd/clockwork": "^4.0"
+  },
+  "require-dev": {
+    "phalcon/ide-stubs": "3.2.*"
+  }
+}
