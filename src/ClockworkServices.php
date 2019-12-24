@@ -43,10 +43,10 @@ class ClockworkServices extends Component
             $this->setEventsManager(new Manager());
         }
 
+        $this->di->setShared('clockwork', $clockwork);
+
         $this->registerRouter();
         $this->initAuth();
-
-        $this->di->setShared('clockwork', $clockwork);
 
         $this->setListeners();
         $this->setDataSources();
