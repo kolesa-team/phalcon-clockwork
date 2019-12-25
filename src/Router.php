@@ -23,20 +23,8 @@ class Router extends Group
 
         $this->setPrefix($prefix);
 
-        $this->add('', [
-            'action' => 'webRedirect',
-        ]);
-
-        $this->add('/app', [
-            'action' => 'webIndex',
-        ]);
-
         $this->add('/{path}', [
             'action' => 'webAsset',
-        ]);
-
-        $this->add('/auth', [
-            'action' => 'authenticate',
         ]);
 
         $this->add('/{id}', [
@@ -49,6 +37,18 @@ class Router extends Group
 
         $this->add('/{id}/{direction}/{count}', [
             'action' => 'getData',
+        ]);
+
+        $this->add('', [
+            'action' => 'webRedirect',
+        ]);
+
+        $this->add('/app', [
+            'action' => 'webIndex',
+        ]);
+
+        $this->add('/auth', [
+            'action' => 'auth',
         ]);
 
         $this->beforeMatch(function () {
