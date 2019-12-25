@@ -31,7 +31,7 @@ class Application extends Base
         $this->response->setHeader('X-Clockwork-Version', Clockwork::VERSION);
         $this->response->setHeader(
             'X-Clockwork-Path',
-            "{$this->di->get('clockwork')->config->path('clockwork.api', '/__clockwork')}/"
+            "{$this->di->get('clockwork')->config->path('api', '/__clockwork')}/"
         );
         $this->response->setHeader('Server-Timing', ServerTiming::fromRequest($clockwork->getRequest())->value());
     }

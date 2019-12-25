@@ -158,6 +158,6 @@ abstract class Base  extends DataSource implements InjectionAwareInterface
      */
     protected function getSerializer()
     {
-        return new Serializer($this->getDi()->get('clockwork')->config->path('clockwork.serializer', [])->toArray());
+        return new Serializer($this->getDi()->get('clockwork')->config->path('serializer', [])->toArray());
     }
 }

@@ -55,7 +55,7 @@ class ClockworkSupport extends Injectable
      */
     protected function getAuthenticator()
     {
-        $authenticator = $this->config->path('clockwork.authentication');
+        $authenticator = $this->config->path('authentication');
 
         if (!empty($authenticator['enabled'])) {
             if (isset($authenticator['class'])) {
@@ -79,7 +79,7 @@ class ClockworkSupport extends Injectable
      */
     public function isEnable()
     {
-        return $this->config->path("clockwork.enable", true);
+        return $this->config->path("enable", true);
     }
 
     /**
@@ -90,7 +90,7 @@ class ClockworkSupport extends Injectable
      */
     public function clockworkStorage()
     {
-        $config = $this->config->path('clockwork.storage');
+        $config = $this->config->path('storage');
         $type   = $config['type'];
 
         try {

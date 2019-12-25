@@ -87,7 +87,7 @@ class Config extends Injectable
     public function getFilterBlackList()
     {
         if (is_null($this->filterBlackList)) {
-            $filter                = $this->config->path('clockwork.filter', [])->toArray();
+            $filter                = $this->config->path('filter', [])->toArray();
             $this->filterBlackList = $filter['blackList'] ?? [];
         }
 
@@ -102,7 +102,7 @@ class Config extends Injectable
     public function getFilterWhiteList()
     {
         if (is_null($this->filterWhiteList)) {
-            $filter                = $this->config->path('clockwork.filter', [])->toArray();
+            $filter                = $this->config->path('filter', [])->toArray();
             $this->filterWhiteList = $filter['whiteList'] ?? [];
         }
 
@@ -117,7 +117,7 @@ class Config extends Injectable
     public function isHideClasses()
     {
         if (is_null($this->isHideClasses)) {
-            $filter              = $this->config->path('clockwork.filter', [])->toArray();
+            $filter              = $this->config->path('filter', [])->toArray();
             $this->isHideClasses = $filter['hideClasses'] ?? false;
         }
 
@@ -132,7 +132,7 @@ class Config extends Injectable
     public function isHideNotPublic()
     {
         if (is_null($this->hideUnpublic)) {
-            $filter             = $this->config->path('clockwork.filter', [])->toArray();
+            $filter             = $this->config->path('filter', [])->toArray();
             $this->hideUnpublic = $filter['hideNotPublic'] ?? false;
         }
 

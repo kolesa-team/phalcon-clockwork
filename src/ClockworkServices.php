@@ -57,7 +57,7 @@ class ClockworkServices extends Component
      */
     public function setDataSources()
     {
-        foreach ($this->clockwork->config->path('clockwork.dataSource', $this->defaultDataSource) as $dataSource) {
+        foreach ($this->clockwork->config->path('dataSource', $this->defaultDataSource) as $dataSource) {
             $dataSourceObject = new $dataSource;
 
             if ($dataSourceObject instanceof \Phalcon\Di\InjectionAwareInterface) {
@@ -96,7 +96,7 @@ class ClockworkServices extends Component
     {
         $eventsManager = $this->getEventsManager();
 
-        foreach ($this->clockwork->config->path('clockwork.listeners', $this->defaultListeners) as $event => $listener) {
+        foreach ($this->clockwork->config->path('listeners', $this->defaultListeners) as $event => $listener) {
             if (is_array($listener)) {
                 foreach ($listener as $item) {
                     $eventsManager->attach($event, new $item);

@@ -19,7 +19,7 @@ class Router extends Group
             'controller' => 'clockwork',
         ]);
 
-        $prefix = Di::getDefault()->get('clockwork')->config->path('clockwork.api', '/__clockwork');
+        $prefix = Di::getDefault()->get('clockwork')->config->path('api', '/__clockwork');
 
         $this->setPrefix($prefix);
 
