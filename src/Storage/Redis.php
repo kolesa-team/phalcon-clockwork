@@ -133,7 +133,7 @@ class Redis extends Storage
         $this->getClient()->hSet(
             self::KEY_HASH_STORED,
             $request->id,
-            @json_encode($this->applyFilter($request->toArray()), \JSON_PARTIAL_OUTPUT_ON_ERROR)
+            @json_encode($request->toArray(), \JSON_PARTIAL_OUTPUT_ON_ERROR)
         );
 
         if ($this->expiration > 0) {
