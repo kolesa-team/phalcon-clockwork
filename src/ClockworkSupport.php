@@ -90,13 +90,13 @@ class ClockworkSupport extends Injectable
      */
     public function clockworkStorage()
     {
-        $config = $this->config->path('storage');
-        $type   = $config['type'];
+        $config    = $this->config->path('storage');
+        $className = '\\Kolesa\\Clockwork\\Storage\\' . ucfirst($config['type']);
 
         try {
-            if ($type === 'redis') {
+            if (class_exists($className)) {
                 $options = $config['options'] ?? [];
-                $storage = new Redis($options, $config['expiration'] ?? null);
+                $storage = new $className($options, $config['expiration'] ?? null);
             } else {
                 $storage = new FileStorage(
                     __DIR__,
