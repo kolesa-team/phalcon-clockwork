@@ -1,7 +1,7 @@
 {
   "name": "kolesa-team/phalcon-clockwork",
   "description": "The clockwork extension for working with the phalcon framework",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "library",
   "authors": [
     {
