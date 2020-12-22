@@ -11,20 +11,12 @@ use Phalcon\Mvc\User\Plugin;
 class Application extends Base
 {
     /**
-     * Boot event
-     */
-    public function boot()
-    {
-        $this->getClockwork()->getTimeline()->startEvent('total', 'Total execution time.', 'start');
-    }
-
-    /**
      * Before send response event
      */
     public function beforeSendResponse()
     {
         $clockwork = $this->getClockwork();
-        $clockwork->getTimeline()->endEvent('total');
+        $clockwork->timeline()->finalize();
         $clockwork->resolveRequest()->storeRequest();
 
         $this->response->setHeader('X-Clockwork-Id', $clockwork->getRequest()->id);

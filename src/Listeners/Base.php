@@ -11,7 +11,7 @@ abstract class Base extends Plugin
     /**
      * Get cloсkwork
      *
-     * @return \Kolesa\Clockwork\Clockwork
+     * @return \Kolesa\Clockwork\ClockworkSupport
      */
     protected function getClockwork()
     {
