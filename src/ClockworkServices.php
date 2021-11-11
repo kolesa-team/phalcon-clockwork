@@ -5,11 +5,18 @@ use Kolesa\Clockwork\Listeners\Application;
 use Clockwork\Clockwork;
 use Kolesa\Clockwork\DataSource\Phalcon;
 use Phalcon\Events\Manager;
-use Phalcon\Mvc\User\Component;
+use Phalcon\Di\Injectable;
 use Phalcon\Config as PhalconConfig;
 
-class ClockworkServices extends Component
+class ClockworkServices extends Injectable implements \Phalcon\Events\EventsAwareInterface
 {
+    /**
+     * Events Manager
+     *
+     * @var \Phalcon\Events\ManagerInterface|null
+     */
+    protected $eventsManager;
+
     /**
      * Default listeners
      *
@@ -37,10 +44,6 @@ class ClockworkServices extends Component
 
         if (!$clockwork->isEnable()) {
             return;
-        }
-
-        if(!$this->getEventsManager()) {
-            $this->setEventsManager(new Manager());
         }
 
         $this->di->setShared('clockwork', $clockwork);
@@ -107,5 +110,30 @@ class ClockworkServices extends Component
 
             $eventsManager->attach($event, new $listener);
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @return \Phalcon\Events\ManagerInterface
+     */
+    public function getEventsManager(): \Phalcon\Events\ManagerInterface
+    {
+        if($this->eventsManager === null) {
+            $this->eventsManager = new Manager();
+        }
+
+        return $this->eventsManager;
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @param \Phalcon\Events\ManagerInterface $eventsManager
+     * @return void
+     */
+    public function setEventsManager(\Phalcon\Events\ManagerInterface $eventsManager)
+    {
+        $this->eventsManager = $eventsManager;
     }
 }

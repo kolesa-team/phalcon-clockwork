@@ -1,12 +1,12 @@
 <?php
 namespace Kolesa\Clockwork\Listeners;
 
-use Phalcon\Mvc\User\Plugin;
+use Phalcon\Di\Injectable;
 
 /**
  * Abstract class for Listeners
  */
-abstract class Base extends Plugin
+abstract class Base extends Injectable
 {
     /**
      * Get cloсkwork

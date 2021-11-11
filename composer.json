@@ -1,7 +1,7 @@
 {
   "name": "kolesa-team/phalcon-clockwork",
   "description": "The clockwork extension for working with the phalcon framework",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "library",
   "authors": [
     {
@@ -16,10 +16,10 @@
   },
   "require": {
     "php": ">=7.0",
-    "ext-phalcon": "^3.0",
+    "ext-phalcon": "^4.1",
     "itsgoingd/clockwork": "^5.0"
   },
   "require-dev": {
-    "phalcon/ide-stubs": "3.2.*"
+    "phalcon/ide-stubs": "^v4.1.0"
   }
 }
