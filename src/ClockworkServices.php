@@ -132,7 +132,7 @@ class ClockworkServices extends Injectable implements \Phalcon\Events\EventsAwar
      * @param \Phalcon\Events\ManagerInterface $eventsManager
      * @return void
      */
-    public function setEventsManager(\Phalcon\Events\ManagerInterface $eventsManager)
+    public function setEventsManager(\Phalcon\Events\ManagerInterface $eventsManager): void
     {
         $this->eventsManager = $eventsManager;
     }
