@@ -3,7 +3,6 @@ namespace Kolesa\Clockwork\Listeners;
 
 use Clockwork\Clockwork;
 use Clockwork\Helpers\ServerTiming;
-use Phalcon\Mvc\User\Plugin;
 
 /**
  * Listener for Application

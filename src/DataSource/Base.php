@@ -24,19 +24,17 @@ abstract class Base  extends DataSource implements InjectionAwareInterface
      * @param  \Phalcon\DI $dependencyInjector
      * @return \Object
      */
-    public function setDI(\Phalcon\DiInterface $dependencyInjector)
+    public function setDI(\Phalcon\Di\DiInterface $container): void
     {
-        $this->di = $dependencyInjector;
-
-        return $this;
+        $this->di = $container;
     }
 
     /**
      * {@inheritdoc}
      *
-     * @return \Phalcon\DI
+     * @return \Phalcon\Di\DiInterface
      */
-    public function getDI()
+    public function getDI(): \Phalcon\Di\DiInterface
     {
         if (null === $this->di) {
             $this->di = \Phalcon\Di\FactoryDefault::getDefault();
@@ -48,7 +46,7 @@ abstract class Base  extends DataSource implements InjectionAwareInterface
     /**
      * Get cloсkwork object
      *
-     * @return \Kolesa\Clockwork\Clockwork
+     * @return \Kolesa\Clockwork\ClockworkServices
      */
     public function getClockwork()
     {

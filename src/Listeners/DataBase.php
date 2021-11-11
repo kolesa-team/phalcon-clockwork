@@ -19,8 +19,8 @@ class DataBase extends Base
     /**
      * This is executed if the event triggered is 'beforeQuery'
      *
-     * @param \Phalcon\Events\Event $event
-     * @param \Phalcon\Db\Adapter   $connection
+     * @param \Phalcon\Events\Event                $event
+     * @param \Phalcon\Db\Adapter\AdapterInterface $connection
      */
     public function beforeQuery(Event $event, $connection)
     {
@@ -30,8 +30,8 @@ class DataBase extends Base
     }
 
     /**
-     * @param \Phalcon\Events\Event $event
-     * @param \Phalcon\Db\Adapter   $connection
+     * @param \Phalcon\Events\Event                $event
+     * @param \Phalcon\Db\Adapter\AdapterInterface $connection
      */
     public function afterQuery(Event $event, $connection)
     {
@@ -48,15 +48,15 @@ class DataBase extends Base
     }
 
     /**
-     * @param \Phalcon\Db\Profiler\Item $profile
-     * @param \Phalcon\Db\Adapter       $connection
+     * @param \Phalcon\Db\Profiler\Item            $profile
+     * @param \Phalcon\Db\Adapter\AdapterInterface $connection
      */
     protected function addQuery($profile, $connection)
     {
         $this->getClockwork()->getRequest()->addDatabaseQuery(
             $profile->getSQLStatement(),
             $connection->getSqlVariables(),
-            $profile->getTotalElapsedSeconds() * 1000
+            ($profile->getFinalTime() - $profile->getInitialTime()) / 1e+6
         );
     }
 }
