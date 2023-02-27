@@ -6,7 +6,7 @@ use Clockwork\Clockwork;
 use Kolesa\Clockwork\DataSource\Phalcon;
 use Phalcon\Events\Manager;
 use Phalcon\Di\Injectable;
-use Phalcon\Config as PhalconConfig;
+use Phalcon\Config\Config as PhalconConfig;
 
 class ClockworkServices extends Injectable implements \Phalcon\Events\EventsAwareInterface
 {

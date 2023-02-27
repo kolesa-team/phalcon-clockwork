@@ -2,7 +2,7 @@
 namespace Kolesa\Clockwork;
 
 use Phalcon\Mvc\Router\Group;
-use Phalcon\Di;
+use Phalcon\Di\Di;
 
 /**
  * Router

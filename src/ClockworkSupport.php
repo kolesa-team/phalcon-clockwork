@@ -7,7 +7,7 @@ use Clockwork\Clockwork;
 use Clockwork\Storage\FileStorage;
 use Kolesa\Clockwork\Storage\Redis;
 use Phalcon\Di\Injectable;
-use Phalcon\Config as PhalconConfig;
+use Phalcon\Config\Config as PhalconConfig;
 
 
 /**
