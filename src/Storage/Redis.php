@@ -194,7 +194,7 @@ class Redis extends Storage
         $data   = $this->getClient()->hMGet(self::KEY_HASH_STORED, $ids);
 
         foreach ($data as $value) {
-            $result[] = new Request(json_decode($value, true));
+            $result[] = new Request(json_decode($value, true) ?: []);
         }
 
         return $result;
@@ -210,7 +210,7 @@ class Redis extends Storage
         $options = $this->options;
         $host    = $options['host'] ?? null;
         $port    = $options['port'] ?? null;
-        $timeout = $options['timeout'] ?? null;
+        $timeout = $options['timeout'] ?? 0; // default is 0 meaning it will use default_socket_timeout
 
         if ($host === null) {
             throw new \Exception('Unexpected inconsistency in options');
