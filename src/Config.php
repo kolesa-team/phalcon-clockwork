@@ -3,7 +3,7 @@ namespace Kolesa\Clockwork;
 
 use Clockwork\DataSource\PhpDataSource;
 use Kolesa\Clockwork\DataSource\Phalcon;
-use Phalcon\Config as PhalconConfig;
+use Phalcon\Config\Config as PhalconConfig;
 use Phalcon\Di\Injectable;
 
 /**

@@ -24,6 +24,13 @@ class Memcached extends Storage
     const KEY_HASH_STORED = 'Clockwork:Storage';
 
     /**
+     * Storage options
+     *
+     * @var array|\Phalcon\Config\Config
+     */
+    protected $options;
+
+    /**
      * Memcached client
      *
      * @var \Memcached

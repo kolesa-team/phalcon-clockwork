@@ -11,7 +11,7 @@ abstract class Base extends Injectable
     /**
      * Get cloсkwork
      *
-     * @return \Kolesa\Clockwork\ClockworkSupport
+     * @return \Clockwork\Clockwork
      */
     protected function getClockwork()
     {
