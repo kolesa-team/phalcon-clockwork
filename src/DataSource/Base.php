@@ -101,9 +101,9 @@ abstract class Base  extends DataSource implements InjectionAwareInterface
         $result = [];
 
         foreach ($data as $key => $item) {
-            if (is_array($item) & !method_exists($item, 'toArray')) {
+            if (is_array($item)) {
                 $item = $this->normalize($item);
-            } elseif (method_exists($item, 'toArray')) {
+            } elseif (is_object($item) && method_exists($item, 'toArray')) {
                 try {
                     $item = $item->toArray();
                 } catch (\Exception $e) {

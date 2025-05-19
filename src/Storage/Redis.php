@@ -24,6 +24,13 @@ class Redis extends Storage
     const KEY_HASH_STORED = 'Clockwork:Storage';
 
     /**
+     * Storage options
+     *
+     * @var array|\Phalcon\Config\Config
+     */
+    protected $options;
+
+    /**
      * Redis client
      *
      * @var \Redis
